@@ -1,0 +1,273 @@
+.shell {
+  position: relative;
+  width: 100%;
+  height:100%;
+}
+.bg {
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  transform: translate(-50%,-17%);
+  font-size: 40rpx;
+  color: #D98859;
+}
+.envelope {
+  position: absolute;
+  width: 460rpx;
+  height: 280rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-40%);
+  /* background-color: #00334c; */
+  background-color: #D98859;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.2);
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-left: 230rpx solid transparent;
+  border-right: 230rpx solid transparent;
+  border-bottom: 128rpx solid transparent;
+  border-top: 152rpx solid #D98859;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+.pocket {
+  border-left: 230rpx solid #F3EAC9;
+  border-right: 230rpx solid #F3EAC9;
+  border-bottom: 140rpx solid #DBCFA6;
+  border-top: 140rpx solid transparent;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+.letter {
+  position: relative;
+  background-color: #fff;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  top: 5%;
+  border-radius: 10rpx;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.12);
+}
+
+.letter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, rgba(255, 255, 255, 0)), color-stop(55%, rgba(215, 227, 239, 0.7)), to(#d7e3ef));
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 25%, rgba(215, 227, 239, 0.7) 55%, #d7e3ef 100%); */
+}
+
+.words {
+  position: absolute;
+  left: 9%;
+  width: 82%;
+  height: 20%;
+  background-color: #e8edf1;
+  font-size:34rpx;
+  line-height: 50rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6rpx;
+}
+.words view {
+  opacity: 0;
+  color:#D98859;
+}
+
+.words.line1 {
+  top: 10%;
+}
+
+.words.line2 {
+  top: 37%;
+}
+
+.open .flap {
+  animation: openOne .4s linear 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+@keyframes openOne {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+    z-index: 1;
+  }
+}
+
+.open .letter {
+  animation: openTwo .4s linear 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.6s; 
+  z-index: 1; 
+}
+
+@keyframes openTwo {
+  0% {
+    transform: translateY(0rpx);
+  }
+  100% {
+    transform: translateY(-110rpx);
+    z-index: 2;
+  }
+}
+
+.hearts {
+  position: absolute;
+  top: 180rpx;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+.heart::before,
+.heart::after {
+  position: absolute;
+  content: "";
+  left: 50rpx;
+  top: 0;
+  width: 50rpx;
+  height: 80rpx;
+  background: #D00000;
+  border-radius: 50rpx 50rpx 0 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+.heart::after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+
+.close .heart {
+  opacity: 0;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.a1 {
+  left: 20%;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 1;
+  -webkit-animation: slideUp 4s linear 1,  sideSway 2s ease-in-out 4 alternate;
+  animation: slideUp 4s linear 1,  sideSway 2s ease-in-out 4 alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .7s;
+          animation-delay: .7s;
+}
+
+.a2 {
+  left: 55%;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-animation: slideUp 5s linear 1,  sideSway 4s ease-in-out 2 alternate;
+  animation: slideUp 5s linear 1,  sideSway 4s ease-in-out 2 alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .7s;
+          animation-delay: .7s;
+}
+
+.a3 {
+  left: 10%;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 1;
+  -webkit-animation: slideUp 7s linear 1,  sideSway 2s ease-in-out 6 alternate;
+  animation: slideUp 7s linear 1,  sideSway 2s ease-in-out 6 alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .7s;
+          animation-delay: .7s;
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -1000rpx;
+  }
+}
+@keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -1000rpx;
+  }
+}
+@-webkit-keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50rpx;
+  }
+}
+@keyframes sideSway {
+  0% {
+    margin-left: 0rpx;
+  }
+  100% {
+    margin-left: 100rpx;
+  }
+}
+
+.envlope-wrapper {
+  height: 450rpx;
+}
+
+.shell .showWord {
+  animation: showWord .8s linear 1;
+  animation-fill-mode: forwards;
+}
+.shell .letter .line1 view {
+  animation-delay: 2.4s;
+}
+.shell .letter .line2 view {
+  animation-delay: 3.2s;
+}

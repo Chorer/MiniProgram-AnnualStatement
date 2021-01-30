@@ -1,0 +1,69 @@
+<!-- 借阅页：借阅用户 -->
+<view class="page {{nextList[pageIndex]}} {{prevList[pageIndex]}}" style="z-index:{{pageSum - pageIndex}}">
+   <qr-code></qr-code>   
+   <image class="bg" src="../../../images/borrow-1.jpg" mode="aspectFill"></image>  
+   <view class="page_content">
+    <view class="page_text page_text1">
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        <view>
+          2020 年，{{person}}借阅了 <text class="page_text_highlight text-style">{{borrowInfo.borrowSum}}</text> 册书
+        </view>
+        <view>
+          全校排名第 <text class="page_text_highlight text-style">{{borrowInfo.borrowRank}}</text> 名！         
+        </view>        
+      </view>
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        <view wx:if="{{person == '您'}}">
+          <text>为祖国的绿水青山，\n您贡献了 <text class="page_text_highlight text-style">{{borrowInfo.saveMoney}}</text> 元！</text>
+        </view>
+        <view wx:else>
+          实力为爸妈节省了 <text class="page_text_highlight text-style">{{borrowInfo.saveMoney}}</text> 元！
+        </view>        
+      </view>      
+    </view>
+    <view class="page_text page_text2">
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        {{person}}所借的图书囊括了 <text class="page_text_highlight text-style">{{borrowInfo.borrowType}}</text> 个种类
+      </view>
+    </view>
+    <view class="page_wordcloud">
+      <image src="{{borrowInfo.borrowTypeImg}}" class="{{isAnimationOneStart?'img_active':''}}"></image>
+    </view>      
+  </view>
+</view>    
+<view class="page {{nextList[pageIndex+1]}} {{prevList[pageIndex+1]}}" style="z-index:{{pageSum - (pageIndex+1)}}">
+   <qr-code></qr-code> 
+   <image class="bg" src="../../../images/borrow-2.jpg" mode="aspectFill"></image>
+   <view class="page_content">
+    <view class="page_text page_text3">
+      <view class="page_line {{isAnimationTwoStart?'showWord':''}}">
+        {{person}}持有时间最长的一本书是
+      </view>
+      <view class="page_line {{isAnimationTwoStart?'showWord':''}}">
+        <text class="page_text_highlight">{{borrowInfo.borrowBookName}}</text>
+      </view>
+      <view class="page_line {{isAnimationTwoStart?'showWord':''}}">
+        它陪伴{{person}}度过了 <text class="page_text_highlight text-style">{{borrowInfo.borrowBookDays}}</text> 天！
+      </view>                      
+    </view> 
+    <view class="page_text page_text4">
+      <view wx:if="{{borrowInfo.borrowStudentSum != 0}}">
+        <view class="page_line {{isAnimationTwoStart?'showWord':''}}">
+         有趣的灵魂终会相遇 
+        </view>
+        <view class="page_line {{isAnimationTwoStart?'showWord':''}}">
+          还有 <text class="page_text_highlight text-style">{{borrowInfo.borrowStudentSum}}</text> 位读者也借过这本书！
+        </view>
+      </view>
+      <view wx:else>
+        <view class="page_line {{isAnimationTwoStart?'showWord':''}}">
+          恭喜{{person}}！
+        </view>
+        <view class="page_line {{isAnimationTwoStart?'showWord':''}}">
+          <text class="page_text_highlight">{{person}}是首位借阅这本书的读者\n</text>
+          <text class="page_text_highlight">果然独具慧眼！</text>          
+        </view>      
+      </view>
+    </view>      
+  </view>
+</view> 

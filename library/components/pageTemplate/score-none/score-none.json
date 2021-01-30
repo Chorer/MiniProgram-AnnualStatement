@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "qr-code": "/components/qr-code/qr-code",
+    "envelope":"/components/envelope/envelope"
+  }
+}

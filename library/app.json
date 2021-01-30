@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/login/login",
+    "pages/book/book",
+    "components/qr-code/qr-code",
+    "components/pageTemplate/enter/enter",
+    "components/pageTemplate/borrow/borrow",
+    "components/pageTemplate/welcome/welcome",
+    "components/pageTemplate/enter-none/enter-none",
+    "components/pageTemplate/borrow-none/borrow-none",
+    "components/pageTemplate/score/score",
+    "components/pageTemplate/score-none/score-none",
+    "components/pageTemplate/flag/flag",
+    "components/pageTemplate/teacher/teacher",
+    "components/pageTemplate/teacher-none/teacher-none"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6a9ffd",
+    "navigationBarTitleText": "年度账单",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

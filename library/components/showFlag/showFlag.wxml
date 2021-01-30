@@ -1,0 +1,38 @@
+<image class="container-bg" src="/images/showFlag.jpg" mode="aspectFill"></image>
+<view class="part-two">
+  <view class="new-year-party">
+    <view class="{{isStart? 'fly-away':''}} balloon balloon--happy">
+      <image class="balloon-bg" src="/images/balloon.png"></image>
+      <text class="balloon__nr">2</text>
+    </view>
+    <view class="{{isStart? 'fly-away':''}} balloon balloon--new">
+      <text class="balloon__nr">0</text>
+    </view>
+    <view class="{{isStart? 'fly-away':''}} balloon balloon--happy">
+      <image class="balloon-bg" src="/images/balloon.png"></image>
+      <text class="balloon__nr">2</text>
+    </view>
+    <view class="{{isStart? 'fly-away':''}} balloon balloon--new">
+      <text class="balloon__nr">1</text>
+    </view>
+  </view>
+  <view class="show-content">
+    <view class="{{isStart? 'showWord-title':''}} show-title">
+      <view class="show-title-one">
+        <text>我的</text>
+        <text class="show-fly iconfont icon-feiji"></text>
+      </view>
+      <view class="show-title-two">
+        <text>--新年--</text>
+      </view>
+    </view>
+    <block wx:for="{{flagLookList}}" wx:key="*this">
+      <view class="{{isStart? 'showWord':''}} show-selectedFlag">
+        <text class="selectedFlag-content">{{index+1}}. {{item}}</text>
+        <view class="show-selectedFlag-icon">
+          <text class="iconfont icon-dagou"></text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

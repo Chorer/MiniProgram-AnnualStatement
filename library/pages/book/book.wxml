@@ -1,0 +1,38 @@
+<g-loader style="display:{{isLoaderShow?'flex':'none'}}"></g-loader>
+<!-- 提交flag时弹出确认框 -->      
+<g-fly  person="{{person}}" styleVar="{{styleVar}}"></g-fly>
+
+<view class="book">
+  <g-progressbar currentPage="{{currentPage}}" pageSum="{{pageSum}}"></g-progressbar>
+  <g-booktips></g-booktips>
+  <view class="book_mask" bindtouchstart="touchStart" bindtouchmove="touchMove">
+    <view class="book_pages">
+      <view class="book_pages_paper">
+        <view wx:for="{{3}}"></view>
+      </view>
+      <!-- 类型1：进馆 + 借阅 + 非教师 -->
+      <g-usertype1 wx:if="{{userType == 1}}"></g-usertype1>
+
+      <!-- 类型2：进馆 + 不借阅 + 非教师 -->
+      <g-usertype2 wx:elif="{{userType == 2}}"></g-usertype2>
+
+      <!-- 类型3：不进馆 + 不借阅 + 非教师 -->
+      <g-usertype3 wx:elif="{{userType == 3}}"></g-usertype3>
+
+      <!-- 类型4：进馆 + 借阅 + 教师 -->
+      <g-usertype4 wx:elif="{{userType == 4}}"></g-usertype4>
+
+      <!-- 类型5：进馆 + 不借阅 + 教师 -->
+      <g-usertype5 wx:elif="{{userType == 5}}"></g-usertype5>
+      
+      <!-- 类型6：不进馆 + 不借阅 + 教师 -->
+      <g-usertype6 wx:elif="{{userType == 6}}"></g-usertype6>    
+      
+      <!-- 类型7：不进馆 + 借阅 + 非教师 -->
+      <g-usertype7 wx:elif="{{userType == 7}}"></g-usertype7> 
+
+      <!-- 类型8：不进馆 + 借阅 + 教师 -->
+      <g-usertype8 wx:elif="{{userType == 8}}"></g-usertype8> 
+    </view>
+  </view>
+</view>

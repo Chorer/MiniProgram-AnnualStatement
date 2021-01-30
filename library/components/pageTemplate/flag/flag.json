@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "fly": "/components/fly/fly",
+    "qr-code":"/components/qr-code/qr-code",
+    "show-flag":"/components/showFlag/showFlag"
+  }
+}

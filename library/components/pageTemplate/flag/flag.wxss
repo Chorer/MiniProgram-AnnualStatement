@@ -1,0 +1,198 @@
+.container {
+  width:100%;
+  box-sizing: border-box;
+  height: calc(100vh - 190rpx);
+  padding:calc(100vh - 190rpx - (100vw * 3) / 2) 0;
+  color: #fff;
+}
+.container-bg {
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 主体内容 */
+.flag-title {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 38rpx;
+  padding: 20rpx; 
+  margin-bottom: 20rpx; 
+}
+.shell, .shell-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top:280rpx; */
+}
+
+.flag-content {
+  /* background-color: #96CDCD; */
+  width:85%;
+  height:350rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 32rpx;
+}
+.flag-content .item {
+  width: 94%;
+  height:70rpx;
+  display: flex; 
+  line-height: 70rpx;
+  /* color: var(--base-color); */
+  color:#1D9AE8;
+  box-sizing: border-box;
+  perspective: 1000; /*不然在手机端rotateY不起作用*/
+  margin-bottom: 30rpx;
+}
+.flag-content .item .selected-item {
+  background-color: #6CBDF0!important;
+  color: #fff;
+  /* box-shadow: 0rpx 12rpx 12rpx 1rpx rgba(0,0,0,.3); */
+  box-shadow: 12rpx 16rpx 12rpx 2rpx rgba(0,0,0,.3);
+}
+.flag-content .item .img {
+  display: inline-block;
+  height:80rpx;
+  line-height: 60rpx;
+  width:40rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  animation: wave .7s infinite ease;
+  transform-origin: 0 0 0;
+  font-size: 32rpx;
+  color: #87CEFA;
+}
+@keyframes wave {
+  0% {
+      transform: rotateY(30deg);
+  }
+  50% {
+      transform: rotateY(0deg);
+  }
+  100% {
+      transform: rotateY(30deg);
+  }
+}
+.flag-content .item .show-flag {
+  flex:1;
+  background-color: #A3D8F8;
+  padding-left: 15rpx;
+  transition: all .2s linear;
+  border-radius: 6rpx;
+}
+.flag-content .change-item {
+  width:130rpx;
+  height:60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  align-self: flex-end;
+  margin-right: 40rpx;
+}
+.flag-content .change-icon {
+  display: inline-block;
+  padding-right: 8rpx;
+  font-size: 28rpx;
+}
+.head {
+  display: flex;
+  align-items: center;
+  margin:0 0 0 70rpx;
+  font-size: 32rpx;
+}
+
+.inputShell {
+  margin:0 0 0 70rpx;
+  height:60rpx;
+  width: 75%;
+  font-size: 30rpx;
+  position: relative;
+  /* background-color: antiquewhite; */
+}
+.inputShell .flag-write {
+  width:100%;
+  height:60rpx;
+  background-color: rgba(255,255,255,0.5);
+  border: 3rpx solid #87CEFA;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+}
+.inputShell .inputTip {
+  font-size: 24rpx;
+  color:red;
+  position: absolute;
+  top:55rpx;
+  left:10rpx;
+}
+
+.process {
+  width: 100%;
+  height:20rpx;
+  margin-top: 46rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.process text {
+  width: 25%;
+  height:15rpx;
+  margin-left: 8rpx;
+  border-radius: 9rpx;
+  background-color: #ddd;
+}
+.process .processBg {
+  background-color: #87CEFA;
+}
+.shellImg {
+  width: calc(100vw - 80rpx); 
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #C9EFEF; */
+}
+.shellImg image {
+  width: 100%;
+  height: 100%;
+}
+.shell-btn {
+  margin-top: 40rpx;
+}
+.shell-btn button {
+  width:240rpx;
+  height:70rpx;
+  background-color:	#6CBDF0;
+  padding: 0;
+  line-height: 70rpx;
+  color:#fff;
+}
+ 
+.backShell {
+  background-color: #87CEFA;
+  padding: 0 15rpx;
+  border-radius: 8rpx;
+  line-height: 65rpx;
+  box-sizing: border-box;
+  position: absolute;
+  bottom:20rpx;
+  right:20rpx;
+}
+.back-text {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.icon-fanhui {
+  padding: 0 10rpx 0 0;
+}

@@ -1,0 +1,12 @@
+<view class="loader_panel">
+  <view class="loader">
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+  <view class="hint">
+    <text>正在生成你的年度账单</text>
+  </view>
+</view>

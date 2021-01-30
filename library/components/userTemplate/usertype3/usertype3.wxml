@@ -1,0 +1,21 @@
+<view>
+  <!-- 1.欢迎页 -->
+  <welcome></welcome>
+  <!-- 2.进馆页 -->
+  <enter-none></enter-none>
+  <!-- 3.借阅页 -->
+  <borrow-none pageIndex="3"></borrow-none>
+  <!-- 4.成绩页（如果是本科生，则展示） -->
+  <view wx:if="{{userIdentity == 'student'}}">
+    <!-- 课程成绩页和绩点页（非大一展示） -->
+    <view wx:if="{{hasPoint}}">
+      <score pageIndex="4"></score>
+    </view>
+    <!-- 馆长寄语页（大一展示） -->
+    <view wx:else>
+      <score-none pageIndex="4"></score-none>
+    </view>
+  </view>
+  <!-- 6.flag页 -->
+  <flag></flag>
+</view>

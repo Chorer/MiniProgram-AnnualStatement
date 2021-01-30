@@ -1,0 +1,40 @@
+@import '../../../styles/page.wxss';
+.bg {
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+.page_content {
+  justify-content: center;
+}
+.page_content .page_text {
+  box-sizing: border-box;
+  height: 70vh;
+  padding: 0 28rpx;
+}
+.page_content .page_text .page_text_part1 {
+  flex: 1;
+  text-align: left;
+}
+.page_content .page_text .page_text_part2 {
+  flex: 1;
+  text-align: right;
+}
+.page_content .page_line {
+  opacity: 0;
+}
+.page_content .page_text_part1 .page_line:nth-of-type(1){
+  animation-delay: .8s;
+}
+.page_content .page_text_part1 .page_line:nth-of-type(2){
+  animation-delay: 1.6s;
+}
+.page_content .page_text_part2 .page_line:nth-of-type(1){
+  animation-delay: 2.4s;
+}
+.page_content .page_text_part2 .page_line:nth-of-type(2){
+  animation-delay: 2.4s;
+}

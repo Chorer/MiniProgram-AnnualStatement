@@ -1,0 +1,1 @@
+<view class="progressbar" style="width:{{currentPercent}}"></view>

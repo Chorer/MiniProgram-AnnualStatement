@@ -1,0 +1,44 @@
+<block wx:if="{{isConfirm}}">
+  <view class="mask {{isHover? 'one':''}} {{isFly_away? 'two':''}}"></view>
+  <view class="confirm-content">
+    <view class="fly" style="{{styleVar}}">
+      <view class="wind">
+        <view class="plane {{isFront? 'front':''}}">
+          <text class="confirm-title">{{person}}的flag确认后就无法修改了哦</text>
+          <view class="confirm-flag">
+            <block wx:if="{{selectedFlagList.length>0||isWriten}}">
+              <block wx:for="{{selectedFlagList}}" wx:key="word">
+                <text>{{item.word}}</text>
+              </block>
+              <block wx:if="{{isWriten}}">
+                <text>{{showContent}}</text>
+              </block>
+            </block>
+            <block wx:else>
+              <text>不打算立下flag起飞么？</text>
+              <image src="/images/cry.png"></image>
+            </block>
+          </view> 
+        </view>
+        <view class="wind_container {{isBeginning? 'beginning':''}} {{isHover? 'hover':''}} {{isFly_away_first? 'fly_away_first':''}} {{isFly_away? 'fly_away':''}}">
+          <view class="left-wing">
+            <view class="top_left curvable {{isCurved? 'curved':''}}"></view>
+            <view class="bottom_left curvable {{isCurved? 'curved':''}}"></view>
+            <view class="wing wing1"></view>
+            <view class="wing wing2"></view>
+          </view>
+          <view class="right-wing">
+            <view class="top_right curvable {{isCurved? 'curved':''}}"></view>
+            <view class="bottom_right curvable {{isCurved? 'curved':''}}"></view>
+            <view class="wing wing3"></view>
+            <view class="wing wing4"></view>
+          </view>
+        </view>
+        <view class="flyShell">
+          <button class="confirm-btn send {{isShow? 'show':'none-show'}}" bindtap="confirmCancel">我再想想</button> 
+          <button class="confirm-btn {{isShow? 'show':'none-show'}}" bindtap="decidedFlag" disabled="{{selectedFlagList.length==0&&(!isWriten)}}">起飞</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "g-loader": "/components/loader/loader",
+    "g-progressbar": "/components/progressbar/progressbar",
+    "g-booktips": "/components/booktips/booktips",
+    "g-fly": "/components/fly/fly",
+    "g-usertype1": "/components/userTemplate/usertype1/usertype1",
+    "g-usertype2": "/components/userTemplate/usertype2/usertype2",
+    "g-usertype3": "/components/userTemplate/usertype3/usertype3",
+    "g-usertype4": "/components/userTemplate/usertype4/usertype4",
+    "g-usertype5": "/components/userTemplate/usertype5/usertype5",
+    "g-usertype6": "/components/userTemplate/usertype6/usertype6",
+    "g-usertype7": "/components/userTemplate/usertype7/usertype7",
+    "g-usertype8": "/components/userTemplate/usertype8/usertype8"
+  }
+}

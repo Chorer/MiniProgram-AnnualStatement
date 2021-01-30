@@ -1,0 +1,4 @@
+<view class="book-tips">
+  <image src="../../images/star.png" class="star"></image>
+  <text>温馨小贴士：向左滑动即可抵达下一页哦~</text>
+</view>

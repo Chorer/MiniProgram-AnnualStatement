@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "welcome":"/components/pageTemplate/welcome/welcome",
+    "enter-none":"/components/pageTemplate/enter-none/enter-none",
+    "borrow-none":"/components/pageTemplate/borrow-none/borrow-none",
+    "score":"/components/pageTemplate/score/score",
+    "score-none":"/components/pageTemplate/score-none/score-none",
+    "flag":"/components/pageTemplate/flag/flag"
+  }
+}

@@ -1,0 +1,17 @@
+<view class="page {{nextList[2]}} {{prevList[2]}}" style="z-index:{{pageSum - 2}}">
+  <qr-code></qr-code>
+  <image src="../../../images/enter-1.jpg" class="bg" mode="aspectFill"></image>
+  <view class="enterNoneShell">
+    <view class="part-one">
+      <view class="word {{enterNone? 'showWord':''}}">
+        <text>亲爱的</text>
+        <text class="changeWord">{{userName}}</text>
+      </view>
+      <text class="word {{enterNone? 'showWord':''}}">2020年{{person}}还没有来过图书馆</text>
+    </view>
+    <view class="part-two">
+      <text class="word wordStyle {{enterNone? 'showWord':''}}">有空</text>
+      <text class="word wordStyle {{enterNone? 'showWord':''}}">记得给自己的灵魂充充电</text>
+    </view>
+  </view>
+</view>  

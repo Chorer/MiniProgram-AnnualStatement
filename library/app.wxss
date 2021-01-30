@@ -1,0 +1,10 @@
+/* 字体图标 */
+@import "styles/iconfont.wxss";
+
+/* 主色调 */
+page {
+  --base-color: #74c3ca;
+  --text-color: #F9F869;
+  /* --text-color: #E8C679; */
+  line-height: 60rpx;
+}

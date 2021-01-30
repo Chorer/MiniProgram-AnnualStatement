@@ -1,0 +1,55 @@
+<!-- 课程信息 -->
+<view wx:if="{{courseAchievement.course}}"
+  class="page {{nextList[pageIndexs.courseIndex]}} {{prevList[pageIndexs.courseIndex]}}" 
+  style="z-index:{{pageSum - pageIndexs.courseIndex}}">
+   <qr-code></qr-code>
+   <image src="../../../images/point.jpg" class="bg" mode="aspectFill"></image>
+   <view class="teacherShell">
+    <view class="part-one">
+      <view class="word {{hasCourse? 'showWord':''}} course">
+        <text>2020年您为本科生开了</text>
+        <text class="changeWord text-style">{{sections}}</text>
+        <text>门课</text>
+      </view>
+      <view class="word {{hasCourse? 'showWord':''}} course">
+        <text>总课时数是</text>
+        <text class="changeWord text-style">{{hours}}</text>
+      </view>
+      <view class="word {{hasCourse? 'showWord':''}} course"><text>俯首甘为孺子牛，您辛苦啦！</text></view>
+    </view>
+    <view class="part-two part-four"> 
+      <block wx:if="{{wordOne == '前20%'}}">
+        <text class="word {{hasCourse? 'showWord':''}} course">总有一节课让学生座无虚席</text>
+        <text class="word {{hasCourse? 'showWord':''}} course">总有一个您让知识立体丰满</text>
+      </block>
+      <block wx:elif="{{wordOne == '中部'}}">
+        <text class="word {{hasCourse? 'showWord':''}} course">海水退潮，沙滩上留下了五彩的贝壳</text>
+        <text class="word {{hasCourse? 'showWord':''}} course">学期结束，学生心里涂上了斑斓色彩</text>
+      </block>
+      <block wx:else>
+        <text class="word {{hasCourse? 'showWord':''}} course">通往学生心里的路</text>
+        <text class="word {{hasCourse? 'showWord':''}} course">您已经掌握~</text>
+      </block>
+    </view>
+  </view>
+</view>     
+
+<!-- 论文信息 -->
+<view wx:if="{{courseAchievement.paper}}"
+  class="page {{nextList[pageIndexs.paperIndex]}} {{prevList[pageIndexs.paperIndex]}}"   
+  style="z-index:{{pageSum - pageIndexs.paperIndex}}">
+  <qr-code></qr-code>
+  <image src="../../../images/course.jpg" class="bg" mode="aspectFill"></image>
+  <view class="teacherShell">
+    <view class="part-two part-five">
+      <view class="word {{hasPaper? 'showWord':''}} paper">
+        <text>2020年您发表了</text>
+        <text class="changeWord text-style">{{paperSum}}</text>
+        <text>篇文章</text>
+      </view>
+      <view class="word {{hasPaper? 'showWord':''}} paper word-style">
+        <text>{{wordTwo}}</text>
+      </view>
+    </view>
+  </view>
+</view>           

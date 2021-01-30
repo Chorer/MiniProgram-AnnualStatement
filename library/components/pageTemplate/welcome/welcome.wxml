@@ -1,0 +1,31 @@
+<!-- 欢迎页 -->
+<view class="page {{nextList[1]}} {{prevList[1]}}" style="z-index:10">
+  <qr-code></qr-code>
+  <image class="bg" src="../../../images/welcome.jpg" mode="aspectFill"></image>
+  <view class="page_content">
+    <view class="page_text page_text1">
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        这不是心电图
+      </view>
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        这是2020年的入馆量
+      </view>
+    </view>
+    <view class="chart_container_panel">
+      <view class="chart_container {{isAnimationOneStart?'chart_container_full':''}}">
+        <image src="../../../images/lineChart.png" mode="scaleToFill"></image>
+      </view>  
+    </view>  
+    <view class="page_text page_text2">
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        疫情让我们休克了数月
+      </view>
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        回到校园
+      </view>
+      <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+        我们又复活了 ~
+      </view>
+    </view>      
+  </view>
+</view>

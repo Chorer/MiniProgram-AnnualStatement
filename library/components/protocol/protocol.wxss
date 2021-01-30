@@ -1,0 +1,83 @@
+.protocol_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+.protocol_container .text-color {
+  color: #fff;
+  font-weight: bold;
+}
+.protocol_container .protocol_icon {
+  background: #fff;
+  border-radius: 50%;
+  width: 32rpx;
+  height: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 6rpx;
+  position: relative;
+}
+.protocol_container .protocol_icon::before {
+  content: '';
+  position: absolute;
+  top: -20rpx;
+  bottom: -20rpx;
+  left: -20rpx;
+  right: -20rpx;
+}
+.protocol_container .protocol_icon .icon-dagou {
+  color: #fff;
+  font-size: 22rpx;
+  font-weight: bold;
+}
+.protocol_container .protocol_icon .icon-dagou-active {
+  color: #729CF8;
+}  
+.protocol_container .protocol_text {
+  text-decoration: underline;
+}
+.protocol_container .protocol_mask {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.protocol_container .protocol_mask .protocol_modal {
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  padding: 70rpx 34rpx;
+  background-color: #fff;
+  color: #34495e;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  line-height: initial;
+}
+.protocol_mask .protocol_modal .header {
+  font-size: 38rpx;
+  text-align: center;
+}
+.protocol_mask .protocol_modal .icon-close {
+  position: absolute;
+  color: #34495e;
+  font-size: 35rpx;
+  right: 28rpx;
+  top: 28rpx;
+}
+.protocol_mask .protocol_modal .icon-close::after {
+  content: '';
+  position: absolute;
+  top: -20rpx;
+  bottom: -20rpx;
+  left: -20rpx;
+  right: -20rpx;
+}

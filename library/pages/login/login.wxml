@@ -1,0 +1,89 @@
+<image class="login_bg" src="../../images/login-bg.jpg"></image>
+<view class="login">
+  <!--logo-->
+  <view class="login_logo">
+    <image src="../../images/logo.png" mode="aspectFill"></image>
+  </view>
+  <!--提示信息-->
+  <view class="login_hint">
+    这是你的gc年度账单
+  </view>
+
+  <!-- 登录表单 -->
+  <view class="login_form" wx:if="{{!hasLogin}}">
+    <view class="login_tabbar">
+      <block wx:for="{{loginOptions}}" wx:key="index">
+        <view class="login_tabbar_option {{currentLoginIndex == index?'activeOption':''}}" 
+          bindtap="changeLoginOption" 
+          data-index="{{index}}">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="login_formContainer">
+      <!-- 学生登录 -->
+      <view class="student_form" hidden="{{currentLoginIndex != 0}}">
+        <view>
+          <label for="">收件人</label>
+          <view class="input_wrapper {{currentInputIndex == 1?'input_wrapper_focus':''}}">
+            <view class="iconfont icon-user"></view>
+            <input type="text"   
+              cursor-spacing="30"       
+              data-index="1"
+              value="{{numberValue}}"
+              bindfocus="onFocus"
+              bindblur="onBlur"
+              bindinput="onInput"
+              placeholder="输入你的学号或工号" 
+              placeholder-class="placeholderClass" />            
+            <view class="iconfont icon-reset {{numberValue.length?'':'hideReset'}}" data-index="1" catchtap="resetValue"></view>  
+          </view>
+        </view>
+        <view>
+          <label for="">取件码</label>
+          <view class="input_wrapper {{currentInputIndex == 2?'input_wrapper_focus':''}}">
+            <view class="iconfont icon-password"></view>
+            <input type="password" 
+              cursor-spacing="30"
+              data-index="2"
+              value="{{passwordValue}}"
+              bindfocus="onFocus" 
+              bindblur="onBlur"
+              bindinput="onInput"
+              disabled="{{isDisabled}}"
+              placeholder="输入身份证/护照后六位或六个6" 
+              placeholder-class="placeholderClass"/>
+            <view class="iconfont icon-reset {{passwordValue.length?'':'hideReset'}}" data-index="2" catchtap="resetValue"></view>   
+          </view>                           
+        </view>
+      </view>
+      <!-- 游客登录 -->
+      <view class="visitor_form" hidden="{{currentLoginIndex != 1}}">
+        <text>欢迎精神gc人\n盲盒惊喜等你抽</text>
+      </view>
+      <g-protocol hasProtocolCheck="{{hasProtocolCheck}}" bind:_changeProtocolState="_changeProtocolState"></g-protocol>
+      <button class="submit_btn" form-type="submit" 
+        disabled="{{!hasProtocolCheck}}"
+        bind:tap="userLogin"
+      >
+        确认无误，打开看看
+      </button> 
+    </view>
+  </view>
+
+  <!-- 已登录面板 -->
+  <view class="hasLogin_panel" wx:else="{{hasLogin}}">
+    <view class="panel_avatar">
+      <open-data class="" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="panel_text">
+      你已成功登录
+    </view>
+    <view class="panel_toBook">
+      <button class="toBook_btn" bindtap="navigateToBook">查看我的年度报告</button>
+    </view>
+    <view class="panel_logout">
+      <button class="logout_btn" bindtap="logout">退出登录</button>
+    </view>    
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<image src="/images/course-1.jpg" class="bg" mode="aspectFill"></image>
+<view class="shell">
+  <text class="title">想对gcer说:</text>
+  <view class="envlope-wrapper">
+    <view class="envelope {{isStart? 'open':'close'}}">
+      <view class="front flap"></view>
+      <view class="front pocket"></view>
+      <view class="letter">
+        <view class="words line1">
+          <view class="{{isStart? 'showWord':''}}"><slot name="word1"></slot></view>
+        </view>
+        <view class="words line2">
+          <view class="{{isStart? 'showWord':''}}"><slot name="word2"></slot></view>
+        </view>
+      </view>
+      <view class="hearts">
+        <view class="heart a1"></view>
+        <view class="heart a2"></view>
+        <view class="heart a3"></view>
+      </view>
+    </view>
+  </view>
+</view>

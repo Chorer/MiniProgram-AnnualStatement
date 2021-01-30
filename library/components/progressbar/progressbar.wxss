@@ -1,0 +1,11 @@
+.progressbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8rpx;
+  background-color: #729CF8;
+  transition: width .4s ease-in-out;
+}
+
+
+

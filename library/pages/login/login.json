@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "g-protocol": "/components/protocol/protocol"
+  }
+}

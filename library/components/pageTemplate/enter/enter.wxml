@@ -1,0 +1,88 @@
+<!-- 进馆页：进馆用户   -->
+<view class="page {{nextList[2]}} {{prevList[2]}}" style="z-index:9">
+  <qr-code></qr-code>
+  <image src="../../../images/enter-1.jpg" class="container-bg" mode="aspectFill"></image>
+  <view class="enterShell">
+    <view class="part-one">
+      <view class="word {{enterOne? 'showWord':''}}">
+        <text>亲爱的</text>
+        <text class="changeWord">{{userName}}</text>
+      </view>
+      <view class="word {{enterOne? 'showWord':''}}">
+        <text>2020年{{person}}的进馆天数是</text>
+        <text class="changeWord text-style">{{enterDays}}</text>
+        <text>天</text>
+      </view>
+      <view class="word {{enterOne? 'showWord':''}}">
+        <text>占总开馆天数的</text>
+        <text class="changeWord text-style">{{enterRate}}</text>
+      </view>
+    </view>
+    <view class="part-two">
+      <text class="word wordStyle {{enterOne? 'showWord':''}}">{{enterWord1}}</text>
+    </view>
+  </view>
+</view>  
+<view class="page {{nextList[3]}} {{prevList[3]}}" style="z-index:8">
+  <qr-code></qr-code>
+  <image src="../../../images/enter-2.jpg" class="container-bg" mode="aspectFill"></image>
+  <view class="enterShell">
+    <block wx:if="{{!isJan}}">
+      <view class="part-one part-six">
+        <text class="word {{enterTwo? 'showWord':''}}">{{person}}还记得么？</text>
+        <text class="word {{enterTwo? 'showWord':''}}">疫情后</text>
+        <view class="word {{enterTwo? 'showWord':''}}">
+          <text class="changeWord changeWordStyle text-style">{{firstEnter}}</text>
+          <text>{{person}}第一次踏入了图书馆</text>
+        </view>
+      </view>
+      <view class="part-two part-six-extra">
+        <text class="word wordStyle {{enterTwo? 'showWord':''}}">有{{person}}在</text>
+        <text class="word wordStyle {{enterTwo? 'showWord':''}}">便是我们最好的时光</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="part-one part-seven">
+        <text class="word {{enterTwo? 'showWord':''}}">疫情后</text>
+        <text class="word {{enterTwo? 'showWord':''}}">{{person}}就没有再进过图书馆了</text>
+      </view>
+      <view class="part-two part-seven-extra">
+        <text class="word wordStyle {{enterTwo? 'showWord':''}}">有空</text>
+        <text class="word wordStyle {{enterTwo? 'showWord':''}}">记得给自己的灵魂充充电</text>
+      </view>
+    </block>
+  </view>
+</view>  
+<view class="page {{nextList[4]}} {{prevList[4]}}" style="z-index:7">
+  <qr-code></qr-code>
+  <image src="../../../images/enter-3.jpg" class="container-bg" mode="aspectFill"></image>
+  <view class="enterShell">
+    <view class="part-four">
+      <view class="word {{enterThree? 'showWord':''}}">
+        <text>{{person}}喜欢在</text>
+        <text class="changeWord text-style">{{timeWord}}</text>
+        <text>来图书馆</text>
+      </view>
+      <view class="enterTime">
+        <text class="iconfont icon-day"></text>
+        <view style="width:{{morningWidth}}rpx;"><view class="{{enterThree? 'enterRect':''}}"></view></view>
+        <text class="enterNum {{enterThree? 'showWord':''}}">{{morning}}次</text>
+      </view>
+      <view class="enterTime">
+        <text class="iconfont icon-noon"></text>
+        <view style="width:{{afternoonWidth}}rpx;"><view class="{{enterThree? 'enterRect':''}}"></view></view>
+        <text class="enterNum {{enterThree? 'showWord':''}}">{{afternoon}}次</text>
+      </view>
+      <view class="enterTime">
+        <text class="iconfont icon-night"></text>
+        <view style="width:{{nightWidth}}rpx;"><view class="{{enterThree? 'enterRect':''}}"></view></view>
+        <text class="enterNum {{enterThree? 'showWord':''}}">{{night}}次</text>
+      </view>
+    </view>
+    <view class="part-five {{enterThree? 'showWord':''}}" >
+      <text class="iconfont icon-douhao1"></text>
+      <text>{{enterWord2}}</text>
+      <text class="iconfont icon-douhao"></text>
+    </view>
+  </view>
+</view>  

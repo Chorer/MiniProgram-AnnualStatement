@@ -1,0 +1,182 @@
+/* 页面 */
+page {
+  width: 100vw;
+  height: 100vh;
+  padding: 30rpx 60rpx;
+  box-sizing: border-box;
+  color: white;
+}
+.login_bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* logo */
+.login .login_logo {
+  height: 420rpx;
+  position: relative;
+}
+.login .login_logo image {
+  width: 100%;
+  height: 100%;
+  /* mix-blend-mode: overlay; */
+}
+/* 提示文本 */
+.login .login_hint {
+  line-height: 160rpx;
+  height: 160rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+/* 表单 */
+.login .login_form {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.login_form .login_tabbar {
+  height: 100rpx;
+  display: flex;
+  position: relative;
+}
+.login_form .login_formContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 25rpx 0;
+  box-sizing: border-box;
+}
+
+.login_form .login_tabbar .login_tabbar_option {
+  flex: 1;
+  text-align: center;
+  line-height: 100rpx;
+  position: relative;
+  color: rgba(255,255,255,.5);
+  font-size: 35rpx;
+}
+.login_form .login_tabbar .activeOption {
+  color: white;
+}
+.login_form .login_tabbar .activeOption::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  border-top: 1px solid white;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+}
+.student_form view {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.student_form view + view {
+  margin-top: 60rpx;
+  position: relative;
+}
+.student_form view.passwordHint::after {
+  content:attr(data-message);
+  position: absolute;
+  color: black;
+  font-size: 25rpx;
+  left: 150rpx;
+  top: 100%;
+}
+.student_form view label {
+  flex: 0 0 120rpx;
+  margin-right: 10rpx;
+  font-size: 35rpx;
+}
+.student_form view .input_wrapper {
+  flex: 1;
+  height: 80rpx;
+  /* background: rgba(108,151,247,.5); */
+  background: rgba(56, 56, 56,.2);
+  position: relative;
+  border-radius: 40rpx;
+  transition: all .3s;
+}
+.student_form view .input_wrapper_focus {
+  box-shadow: 0 0 0 4rpx rgba(40,117,232,.3);
+  /* border: 1px solid rgba(81, 203, 238,.5); */
+}
+.student_form view .input_wrapper input {
+  width: 75%;
+}
+.student_form view .icon-reset{
+  color: rgba(56, 56, 56,.5);
+  font-size: 40rpx;
+  position: absolute;
+  right: 10rpx;
+  z-index: 100;
+}
+.student_form view .icon-reset.hideReset {
+  display: none;
+}
+.student_form view .icon-user,.student_form view .icon-password{
+  padding: 0 15rpx;
+}
+.student_form view .placeholderClass {
+  color:white;
+  font-size:27rpx;
+}
+.visitor_form {
+  font-size: 40rpx;
+  text-align: center;
+}
+.login_form .submit_btn {
+  width: fit-content;
+  font-size: 35rpx;
+  border: 1px solid white;
+  color: white;
+  font-weight: normal;
+  color: #729CF8;
+  background: white;
+  border-radius: 50rpx;
+}
+.hasLogin_panel {
+  height: 590rpx;
+  /* background-color: var(--base-color); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+}
+.hasLogin_panel .panel_avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.hasLogin_panel .panel_text {
+  font-size: 35rpx;
+}
+.hasLogin_panel .panel_toBook .toBook_btn {
+  width: fit-content;
+  color: #729CF8;
+  font-size: 35rpx;
+  font-weight: normal;
+  border-radius: 50rpx;
+}
+.hasLogin_panel .panel_logout .logout_btn {
+  width: fit-content;
+  color: #d43c33;
+  font-size: 35rpx;
+  font-weight: normal;
+  border-radius: 50rpx;
+}

@@ -1,0 +1,7 @@
+<view class="page {{nextList[pageIndex]}} {{prevList[pageIndex]}}" style="z-index:{{pageSum - pageIndex}}">
+  <qr-code></qr-code>
+  <envelope isStart="{{isStart}}">
+    <text slot="word1">落花时节读华章</text>
+    <text slot="word2">风物长宜放眼量</text>
+  </envelope>
+</view>    

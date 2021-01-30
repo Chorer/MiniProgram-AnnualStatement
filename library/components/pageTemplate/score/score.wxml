@@ -1,0 +1,58 @@
+<!-- 课程成绩页 -->
+<view class="page {{nextList[pageIndex]}} {{prevList[pageIndex]}}" 
+  style="z-index:{{pageSum - pageIndex}}">
+  <qr-code></qr-code>
+  <image src="../../../images/course-2.jpg" class="bg" mode="aspectFill"></image>
+  <view class="courseShell">
+    <view class="part-one">
+      <text class="title word {{hasCoursePoint? 'showWord':''}} coursePoint">
+        积跬步，至千里；积小流，成江海
+      </text>
+      <text class="title word {{hasCoursePoint? 'showWord':''}} coursePoint">
+        2020上学期你成绩最好的三门课是:
+      </text>
+      <view class="course {{hasCoursePoint? 'showWord':''}} coursePoint" wx:for="{{courseList}}" wx:key="courseName">
+        <text class="courseName word">《{{item.courseName}}》</text>
+        <text class="courseDetail">分数：{{item.courseRank}}</text>
+      </view>
+    </view>
+  </view>
+</view>  
+<!-- 绩点页 -->
+<view class="page {{nextList[pageIndex + 1]}} {{prevList[pageIndex + 1]}}" 
+  style="z-index:{{pageSum - (pageIndex + 1)}}">
+  <qr-code></qr-code>
+  <image src="../../../images/point.jpg" class="bg" mode="aspectFill"></image>
+  <view class="courseShell">
+    <view class="part-two">
+      <view class="word {{hasScore? 'showWord':''}} score">
+        <text class="word">人生是一场马拉松</text>
+        <text>2020上学期你的绩点是</text>
+        <text class="changeWord text-style">{{point}}</text>
+      </view>
+      <block wx:if="{{rank == '班级排名前10%'}}">
+        <text class="word {{hasScore? 'showWord':''}} score changeColor">怎么说</text>
+        <text class="word {{hasScore? 'showWord':''}} score changeColor">平平淡淡考了个试</text>
+        <text class="{{hasScore? 'showWord':''}} score changeColor">没想到就跑在了前头</text>
+      </block>
+      <block wx:elif="{{rank == '班级排名中部'}}">
+        <text class="word {{hasScore? 'showWord':''}} score changeColor">怎么说</text>
+        <text class="word {{hasScore? 'showWord':''}} score changeColor">凡尔赛名额已爆满</text>
+        <text class="{{hasScore? 'showWord':''}} score changeColor">下学期跑步来领取</text>
+      </block>
+      <block wx:else>
+         <text class="word {{hasScore? 'showWord':''}} score changeColor">怎么说</text>
+        <text class="word {{hasScore? 'showWord':''}} score changeColor">被羡慕的是绩点上巨大的进步空间</text>
+        <text class="{{hasScore? 'showWord':''}} score changeColor">未来，比过去更重要</text>
+      </block>
+    </view>
+    <view class="part-three">
+      <view class="wordStyle {{hasScore? 'showWord':''}} score">
+        <text class="word">与前一学期相比</text>
+        <text>你的绩点是</text>
+        <text class="changeWord">{{compare}}</text>
+      </view>
+      <text class="wordStyle {{hasScore? 'showWord':''}} changeColor score">{{compareWord}}</text>
+    </view>
+  </view>
+</view>     

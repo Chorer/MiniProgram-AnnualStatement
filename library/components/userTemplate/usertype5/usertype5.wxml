@@ -1,0 +1,18 @@
+<view>
+  <!-- 1.欢迎页 -->
+  <welcome></welcome>
+  <!-- 2.进馆页 -->
+  <enter></enter>
+  <!-- 3.借阅页 -->
+  <borrow-none pageIndex="5"></borrow-none>
+  <!-- 4.教师信息页：没有数据 -->
+  <view wx:if="{{!courseAchievement.course && !courseAchievement.paper}}">
+    <teacher-none pageIndex="6"></teacher-none>
+  </view>
+  <!-- 4.教师信息页：有数据 -->
+  <view wx:else>
+    <teacher pageIndexs="{{pageIndexs}}"></teacher>
+  </view>
+  <!-- 6.flag页 -->
+  <flag></flag>
+</view>                   

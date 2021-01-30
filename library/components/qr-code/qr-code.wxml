@@ -1,0 +1,8 @@
+<view class="code_container">
+  <view class="code_img">
+    <image src="{{qrCodeUrl}}"></image>
+  </view>
+  <view class="code_text">
+    <text>gcer扫描二维码\n回忆你的 2020!</text>
+  </view>  
+</view>

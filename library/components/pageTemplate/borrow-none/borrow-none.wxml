@@ -1,0 +1,24 @@
+<view class="page {{nextList[pageIndex]}} {{prevList[pageIndex]}}" style="z-index:{{pageSum - pageIndex}}">
+  <qr-code></qr-code>
+  <image class="bg" src="../../../images/borrow-2.jpg" mode="aspectFill"></image>
+  <view class="page_content">
+    <view class="page_text">
+      <view class="page_text_part1">
+        <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+          亲爱的 <text class="page_text_highlight">{{userName}}</text>
+        </view>
+        <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+          2020年{{person}}还没有借过书   
+        </view>
+      </view>
+      <view class="page_text_part2 page_text_highlight">
+        <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+          经典在哭泣
+        </view>
+        <view class="page_line {{isAnimationOneStart?'showWord':''}}">
+          通往{{person}}心中的路还在施工中么?
+        </view>
+      </view>
+    </view>  
+  </view>    
+</view>  

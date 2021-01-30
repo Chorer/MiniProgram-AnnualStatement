@@ -1,0 +1,68 @@
+.loader_panel {
+  background: #729CF8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  color: #fff;
+  font-size: 38rpx;
+} 
+.loader_panel .loader {
+  margin-bottom: 30rpx;
+}
+.loader_panel .loader  view {
+  background-color: #fff;
+  width: 10rpx;
+  height: 80rpx;
+  border-radius: 4rpx;
+  margin: 4rpx;
+  animation-fill-mode: both;
+  display: inline-block;
+  animation: loader_animation 0.9s 0s infinite cubic-bezier(.85, .25, .37, .85); 
+}
+.loader view:nth-child(2), .loader  view:nth-child(4) {
+  animation-delay: 0.2s !important; 
+}
+.loader  view:nth-child(1), .loader  view:nth-child(5) {
+  animation-delay: 0.4s !important; 
+}        
+@keyframes loader_animation {
+  0% {
+    transform: scaley(1); 
+  }
+  50% {
+    transform: scaley(0.4); 
+  }
+  100% {
+    transform: scaley(1); 
+  } 
+}    
+.loader_panel .hint {
+  width: 436rpx;
+  position: relative;
+}    
+.loader_panel .hint::after {
+  content: ". . .";
+  position: absolute;
+  left: 390rpx;
+  width: 46rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  animation: typing 1.2s infinite ease-out; 
+}
+@keyframes typing {
+  0% {
+    width: 0rpx;
+  }
+  100% {
+    width: 46rpx;
+  }
+}
+ 

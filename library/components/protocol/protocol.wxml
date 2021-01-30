@@ -1,0 +1,23 @@
+<view class="protocol_container">
+  <!-- 文本 -->
+  <view class="protocol_icon" bindtap="changeProtocolState">
+    <text class="iconfont icon-dagou {{hasProtocolCheck?'icon-dagou-active':''}}"></text>
+  </view>
+  <text class="text-color">我已阅读并知悉</text>
+  <text class="protocol_text text-color" bindtap="openProtocol">《用户协议》</text>
+  <!-- 弹窗 -->
+  <view class="protocol_mask" catchtouchmove="stopScroll" hidden="{{!isProtocolShow}}">
+    <view class="protocol_modal">
+      <view class="header">
+        小程序知情同意书
+      </view>
+      <text class="content">
+        1、本小程序所呈现的数据来源于广东财经大学图书馆、教务处、网络信息中心以及公开发表的网络资源。\n							
+        2、小程序拟轻松活泼地总结gc师生2020年的工作和学习情况，仅供娱乐使用，请勿过度解读。\n							
+        3、本小程序由图书馆、教务处和网络信息中心共同策划开发，排名不分先后。\n							
+        4、本小程序的解释权归图书馆所有。							
+      </text>
+      <view class="iconfont icon-close" bindtap="closeProtocol"></view>
+    </view>
+  </view>
+</view>

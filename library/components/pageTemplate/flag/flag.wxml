@@ -1,0 +1,60 @@
+<view class="page {{nextList[pageSum]}} {{prevList[pageSum]}} " style="z-index:0" > 
+  <qr-code></qr-code>
+<!-- flag选择页面内容 start -->
+  <block wx:if="{{!hasSubmit}}">
+    <image class="container-bg" src="/images/flag.jpg" mode="aspectFill"></image>
+    <view class="container">
+      <view class="flag-title">
+        <text>2020年过得还好么？</text>
+        <text>为明年立下flag吧~</text>
+      </view>
+      <view class="shell">
+        <view class="flag-content">
+          <view class="item">
+            <view class="iconfont icon-flag img"></view>
+            <text class="show-flag {{selectedFlagList[0].index==(flagIndex-1)*3||selectedFlagList[1].index==(flagIndex-1)*3||selectedFlagList[2].index==(flagIndex-1)*3? 'selected-item':''}}" bindtap="selectedFlag" data-index="{{(flagIndex-1)*3}}">{{showflagList[0]}}</text>
+          </view>
+          <view class="item">
+            <view class="iconfont icon-flag img"></view>
+            <text class="show-flag {{selectedFlagList[0].index==(flagIndex-1)*3+1||selectedFlagList[1].index==(flagIndex-1)*3+1||selectedFlagList[2].index==(flagIndex-1)*3+1? 'selected-item':''}}" bindtap="selectedFlag" data-index="{{(flagIndex-1)*3+1}}" >{{showflagList[1]}}</text>
+          </view>
+          <view class="item">
+            <view class="iconfont icon-flag img"></view>
+            <text class="show-flag {{selectedFlagList[0].index===(flagIndex-1)*3+2||selectedFlagList[1].index===(flagIndex-1)*3+2||selectedFlagList[2].index===(flagIndex-1)*3+2? 'selected-item':''}}" bindtap="selectedFlag" data-index="{{(flagIndex-1)*3+2}}">{{showflagList[2]}}</text>
+          </view>
+          <view class="change-item" bindtap="changeFlag">
+            <text class="iconfont icon-shuaxin change-icon"></text>换一批
+          </view>
+        </view>
+      </view>
+      <view class="head">
+        <text>我要自己写：</text>
+      </view>
+      <form bindsubmit="submitFlag">
+        <view class="inputShell">
+          <input type="text" name="flag" class="flag-write" bindinput="inputFlag" placeholder="不超过25字哦" cursor-spacing="22"></input>
+          <text class="inputTip" wx:if="{{isTextFill}}">*超出字数了哦</text>
+        </view>
+        <view class="process">
+          <text class="{{selectedFlagList.length>0 || (selectedFlagList.length==0&&isWriten)? 'processBg':''}}"></text>
+          <text class="{{selectedFlagList.length>1 || (selectedFlagList.length==1&&isWriten)? 'processBg':''}}"></text>
+          <text class="{{selectedFlagList.length>2 || (selectedFlagList.length==2&&isWriten)? 'processBg':''}}"></text>
+        </view>
+        <view class="shell-btn">
+          <button form-type="submit" class="flag-submit">提交flag</button>
+        </view>
+      </form>
+    </view>
+  </block>
+  <!-- flag选择页面 over -->
+  <!-- flag展示页面 start-->
+  <block wx:else>
+    <show-flag></show-flag>
+  </block>
+  <!-- flag展示页面 over -->
+  <view class="backShell" bindtap="tofirstPage">
+    <text class="iconfont icon-fanhui"></text>
+    <text class="back-text">再次回忆</text>
+  </view>
+</view>   
+

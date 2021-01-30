@@ -1,0 +1,27 @@
+.code_container {
+  width: 340rpx;
+  height: 120rpx;
+  position: absolute;
+  left: 36rpx;
+  bottom: 36rpx;
+  display: flex;
+  z-index: 1;
+}
+.code_container .code_img {
+  width: 120rpx;
+  height: 120rpx;
+}
+.code_container .code_img image {
+  border-radius: 50%;
+}
+.code_container .code_text {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22rpx;
+  text-align: center;
+  font-weight: bold;
+  line-height: initial;
+}
